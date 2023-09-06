@@ -22,7 +22,8 @@
                             <hr>
                             <h4 class="card-title">Admin Address : {{ $admin->address }} </h4>
                             <hr>
-                            <a href="" class="btn btn-info btn-rounded waves-effect waves-light">
+                            <a href="{{ route('admin-profile-edit') }}"
+                                class="btn btn-info btn-rounded waves-effect waves-light">
                                 Edit Profile</a>
 
                         </div>
