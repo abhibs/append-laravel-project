@@ -20,13 +20,13 @@
                             @endif
 
 
-                            <form method="post" action="">
+                            <form method="post" action="{{ route('admin-password-update') }}">
                                 @csrf
 
                                 <div class="row mb-3">
                                     <label for="example-text-input" class="col-sm-2 col-form-label">Old Password</label>
                                     <div class="col-sm-10">
-                                        <input name="oldpassword" class="form-control" type="password" id="oldpassword">
+                                        <input name="old_password" class="form-control" type="password" id="oldpassword">
                                     </div>
                                 </div>
                                 <!-- end row -->
@@ -35,7 +35,7 @@
                                 <div class="row mb-3">
                                     <label for="example-text-input" class="col-sm-2 col-form-label">New Password</label>
                                     <div class="col-sm-10">
-                                        <input name="newpassword" class="form-control" type="password" id="newpassword">
+                                        <input name="new_password" class="form-control" type="password" id="newpassword">
                                     </div>
                                 </div>
                                 <!-- end row -->
@@ -45,7 +45,7 @@
                                 <div class="row mb-3">
                                     <label for="example-text-input" class="col-sm-2 col-form-label">Confirm Password</label>
                                     <div class="col-sm-10">
-                                        <input name="confirm_password" class="form-control" type="password"
+                                        <input name="new_password_confirmation" class="form-control" type="password"
                                             id="confirm_password">
                                     </div>
                                 </div>
