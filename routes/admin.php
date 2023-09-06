@@ -17,6 +17,7 @@ Route::group(['prefix' => 'admin'], function () {
         Route::get('/profile', [Admincontroller::class, 'adminProfile'])->name('admin-profile');
         Route::get('/profile/edit', [Admincontroller::class, 'adminProfileEdit'])->name('admin-profile-edit');
         Route::post('/profile/update', [AdminController::class, 'adminProfileUpdate'])->name('admin-profile-update');
+        Route::get('/change/password', [Admincontroller::class, 'changePassword'])->name('admin-change-password');
 
     });
 
