@@ -46,7 +46,7 @@
                     <h4 class="text-muted text-center font-size-18"><b>Admin Login</b></h4>
 
                     <div class="p-3">
-                        <form class="form-horizontal mt-3" action="" method="POST">
+                        <form class="form-horizontal mt-3" action="{{ route('admin-login-post') }}" method="POST">
                             @csrf
 
                             <div class="form-group mb-3 row">
