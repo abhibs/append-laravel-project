@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Admin;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use Auth;
+use Intervention\Image\Facades\Image;
 
 class AdminController extends Controller
 {
