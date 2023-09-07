@@ -4,6 +4,8 @@
         @php
             $admin = Auth::guard('admin')->user();
             $aboutdata = App\Models\About::first();
+            $featuredata = App\Models\Feature::first();
+
         @endphp
         <!-- User details -->
         <div class="user-profile text-center mt-3">
@@ -83,15 +85,15 @@
                 <li>
                     <a href="javascript: void(0);" class="has-arrow waves-effect">
                         <i class="ri-vip-crown-2-line"></i>
-                        <span>Advanced UI</span>
+                        <span>Featured Content</span>
                     </a>
                     <ul class="sub-menu" aria-expanded="false">
-                        <li><a href="advance-rangeslider.html">Range Slider</a></li>
-                        <li><a href="advance-roundslider.html">Round Slider</a></li>
-                        <li><a href="advance-session-timeout.html">Session Timeout</a></li>
-                        <li><a href="advance-sweet-alert.html">Sweetalert 2</a></li>
-                        <li><a href="advance-rating.html">Rating</a></li>
-                        <li><a href="advance-notifications.html">Notifications</a></li>
+                        @if (isset($featuredata))
+                            <li><a href="{{ route('feature') }}">Update Featured Content</a></li>
+                        @else
+                            <li><a href="{{ route('feature-create') }}">Add Featured Content</a></li>
+                        @endif
+
                     </ul>
                 </li>
 

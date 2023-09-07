@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\Admin\AboutController;
+use App\Http\Controllers\Admin\FeatureController;
 use App\Http\Controllers\Admin\ServiceController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Admin\AdminController;
@@ -63,6 +64,11 @@ Route::group(['prefix' => 'admin'], function () {
         Route::get('service/inactive/{id}', [ServiceController::class, 'inactive'])->name('service-inactive');
         Route::get('service/active/{id}', [ServiceController::class, 'active'])->name('service-active');
 
+
+        Route::get('feature/content/create', [FeatureController::class, 'create'])->name('feature-create');
+        Route::post('feature/content/store', [FeatureController::class, 'store'])->name('feature-store');
+        Route::get('feature/content', [FeatureController::class, 'index'])->name('feature');
+        Route::post('feature/content/update', [FeatureController::class, 'update'])->name('feature-update');
 
     });
 

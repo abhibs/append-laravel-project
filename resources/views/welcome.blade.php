@@ -166,7 +166,7 @@
         <!--  Section Title -->
         <div class="container section-title" data-aos="fade-up">
             <h2>Features</h2>
-            <p>Necessitatibus eius consequatur ex aliquid fuga eum quidem sint consectetur velit</p>
+            {{-- <p>Necessitatibus eius consequatur ex aliquid fuga eum quidem sint consectetur velit</p> --}}
         </div><!-- End Section Title -->
 
         <div class="container">
@@ -180,7 +180,7 @@
                         velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
                         proident.
                     </p>
-                    <a href="#" class="btn btn-get-started">Get Started</a>
+                    {{-- <a href="#" class="btn btn-get-started">Get Started</a> --}}
                 </div>
                 <div class="col-lg-7 order-1 order-lg-2 d-flex align-items-center" data-aos="zoom-out" data-aos-delay="100">
                     <div class="image-stack">
