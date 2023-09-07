@@ -81,7 +81,7 @@
     </section><!-- End About Section -->
 
     <!-- Stats Section - Home Page -->
-    <section id="stats" class="stats">
+    {{-- <section id="stats" class="stats">
 
         <img src="{{ asset('user/assets/img/stats-bg.jpg') }}" alt="" data-aos="fade-in">
 
@@ -125,7 +125,7 @@
 
         </div>
 
-    </section><!-- End Stats Section -->
+    </section><!-- End Stats Section --> --}}
 
     <!-- Services Section - Home Page -->
     <section id="services" class="services">
@@ -133,7 +133,7 @@
         <!--  Section Title -->
         <div class="container section-title" data-aos="fade-up">
             <h2>Services</h2>
-            <p>Necessitatibus eius consequatur ex aliquid fuga eum quidem sint consectetur velit</p>
+            {{-- <p>Necessitatibus eius consequatur ex aliquid fuga eum quidem sint consectetur velit</p> --}}
         </div><!-- End Section Title -->
 
         <div class="container">

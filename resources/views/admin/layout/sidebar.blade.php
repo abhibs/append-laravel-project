@@ -68,30 +68,15 @@
                     </ul>
                 </li>
 
-                <li class="menu-title">Components</li>
 
                 <li>
                     <a href="javascript: void(0);" class="has-arrow waves-effect">
                         <i class="ri-pencil-ruler-2-line"></i>
-                        <span>UI Elements</span>
+                        <span>Service</span>
                     </a>
                     <ul class="sub-menu" aria-expanded="false">
-                        <li><a href="ui-alerts.html">Alerts</a></li>
-                        <li><a href="ui-buttons.html">Buttons</a></li>
-                        <li><a href="ui-cards.html">Cards</a></li>
-                        <li><a href="ui-carousel.html">Carousel</a></li>
-                        <li><a href="ui-dropdowns.html">Dropdowns</a></li>
-                        <li><a href="ui-grid.html">Grid</a></li>
-                        <li><a href="ui-images.html">Images</a></li>
-                        <li><a href="ui-lightbox.html">Lightbox</a></li>
-                        <li><a href="ui-modals.html">Modals</a></li>
-                        <li><a href="ui-offcanvas.html">Offcavas</a></li>
-                        <li><a href="ui-progressbars.html">Progress Bars</a></li>
-                        <li><a href="ui-tabs-accordions.html">Tabs & Accordions</a></li>
-                        <li><a href="ui-typography.html">Typography</a></li>
-                        <li><a href="ui-video.html">Video</a></li>
-                        <li><a href="ui-general.html">General</a></li>
-
+                        <li><a href="{{ route('service-create') }}">Add Service</a></li>
+                        <li><a href="{{ route('service') }}">All Services</a></li>
                     </ul>
                 </li>
 

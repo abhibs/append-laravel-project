@@ -8,12 +8,12 @@
                     <div class="card">
                         <div class="card-body">
 
-                            <h4 class="card-title">Add About Us Feature </h4>
+                            <h4 class="card-title">Add Service </h4>
 
-                            <form method="post" action="{{ route('aboutus-store') }}">
+                            <form method="post" action="{{ route('service-store') }}">
                                 @csrf
                                 <div class="row mb-3">
-                                    <label for="example-text-input" class="col-sm-2 col-form-label">About Us Content Icon
+                                    <label for="example-text-input" class="col-sm-2 col-form-label">Service Icon
                                     </label>
                                     <div class="col-sm-10">
                                         <input name="icon" class="form-control" type="text" id="example-text-input">
@@ -25,7 +25,7 @@
                                 </div>
 
                                 <div class="row mb-3">
-                                    <label for="example-text-input" class="col-sm-2 col-form-label">About Us Content Title
+                                    <label for="example-text-input" class="col-sm-2 col-form-label">Service Title
                                     </label>
                                     <div class="col-sm-10">
                                         <input name="title" class="form-control" type="text" id="example-text-input">
@@ -43,7 +43,7 @@
 
 
                                 <div class="row mb-3">
-                                    <label for="example-text-input" class="col-sm-2 col-form-label">About Us Content
+                                    <label for="example-text-input" class="col-sm-2 col-form-label">Service Content
                                     </label>
                                     <div class="col-sm-10">
                                         <textarea id="elm1" name="content">
@@ -53,8 +53,7 @@
                                 </div>
                                 <!-- end row -->
 
-                                <input type="submit" class="btn btn-info waves-effect waves-light"
-                                    value="Add About Us Feature">
+                                <input type="submit" class="btn btn-info waves-effect waves-light" value="Add Service">
                             </form>
 
 

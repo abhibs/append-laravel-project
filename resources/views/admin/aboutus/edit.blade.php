@@ -15,7 +15,7 @@
                                 <input type="hidden" name="id" value="{{ $data->id }}">
 
                                 <div class="row mb-3">
-                                    <label for="example-text-input" class="col-sm-2 col-form-label">About Us Content Title
+                                    <label for="example-text-input" class="col-sm-2 col-form-label">About Us Content Icon
                                     </label>
                                     <div class="col-sm-10">
                                         <input name="icon" class="form-control" type="text" id="example-text-input"
