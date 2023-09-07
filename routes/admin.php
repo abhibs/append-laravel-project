@@ -1,9 +1,11 @@
 <?php
 
+use App\Http\Controllers\Admin\AboutController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Admin\AdminController;
 use App\Http\Controllers\Admin\EnquiryController;
 use App\Http\Controllers\Admin\ClientController;
+use App\Http\Controllers\Admin\AboutUsController;
 
 
 Route::get('/test', function () {
@@ -35,6 +37,21 @@ Route::group(['prefix' => 'admin'], function () {
         Route::get('/client/delete/{id}', [ClientController::class, 'delete'])->name('client-delete');
         Route::get('/client/inactive/{id}', [ClientController::class, 'inactive'])->name('client-inactive');
         Route::get('/client/active/{id}', [ClientController::class, 'active'])->name('client-active');
+
+        Route::get('/about/us/content/create', [AboutController::class, 'create'])->name('about-create');
+        Route::post('/about/us/content/store', [AboutController::class, 'store'])->name('about-store');
+        Route::get('/about/us/content', [AboutController::class, 'index'])->name('about');
+        Route::post('/about/us/content/update', [AboutController::class, 'update'])->name('about-update');
+
+
+        Route::get('/about/us/features/create', [AboutUsController::class, 'create'])->name('aboutus-create');
+        Route::post('/about/us/features/store', [AboutUsController::class, 'store'])->name('aboutus-store');
+        Route::get('/about/us/features', [AboutUsController::class, 'index'])->name('aboutus');
+        Route::get('/about/us/features/edit/{id}', [AboutUsController::class, 'edit'])->name('aboutus-edit');
+        Route::post('/about/us/features/update', [AboutUsController::class, 'update'])->name('aboutus-update');
+        Route::get('/about/us/features/delete/{id}', [AboutUsController::class, 'delete'])->name('aboutus-delete');
+        Route::get('/about/us/features/inactive/{id}', [AboutUsController::class, 'inactive'])->name('aboutus-inactive');
+        Route::get('/about/us/features/active/{id}', [AboutUsController::class, 'active'])->name('aboutus-active');
 
     });
 

@@ -3,6 +3,7 @@
     <div data-simplebar class="h-100">
         @php
             $admin = Auth::guard('admin')->user();
+            $aboutdata = App\Models\About::first();
         @endphp
         <!-- User details -->
         <div class="user-profile text-center mt-3">
@@ -54,15 +55,16 @@
                 <li>
                     <a href="javascript: void(0);" class="has-arrow waves-effect">
                         <i class="ri-profile-line"></i>
-                        <span>Utility</span>
+                        <span>About Us</span>
                     </a>
                     <ul class="sub-menu" aria-expanded="false">
-                        <li><a href="pages-starter.html">Starter Page</a></li>
-                        <li><a href="pages-timeline.html">Timeline</a></li>
-                        <li><a href="pages-directory.html">Directory</a></li>
-                        <li><a href="pages-invoice.html">Invoice</a></li>
-                        <li><a href="pages-404.html">Error 404</a></li>
-                        <li><a href="pages-500.html">Error 500</a></li>
+                        @if (isset($aboutdata))
+                            <li><a href="{{ route('about') }}">Update About Us Content</a></li>
+                        @else
+                            <li><a href="{{ route('about-create') }}">Add About Us Content</a></li>
+                        @endif
+                        <li><a href="{{ route('aboutus-create') }}">Add About Us Feature</a></li>
+                        <li><a href="{{ route('aboutus') }}">All About Us Features</a></li>
                     </ul>
                 </li>
 
