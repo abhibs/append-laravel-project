@@ -3,8 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Admin\AdminController;
 use App\Http\Controllers\Admin\EnquiryController;
-
-
+use App\Http\Controllers\Admin\ClientController;
 
 
 Route::get('/test', function () {
@@ -26,6 +25,16 @@ Route::group(['prefix' => 'admin'], function () {
 
         Route::get('/enquiry', [EnquiryController::class, 'index'])->name('user-enquiry');
         Route::get('/enquiry/{id}', [EnquiryController::class, 'delete'])->name('user-enquiry-delete');
+
+
+        Route::get('/client/create', [ClientController::class, 'create'])->name('client-create');
+        Route::post('/client/store', [ClientController::class, 'store'])->name('client-store');
+        Route::get('/client', [ClientController::class, 'index'])->name('client');
+        Route::get('/client/edit/{id}', [ClientController::class, 'edit'])->name('client-edit');
+        Route::post('/client/update', [ClientController::class, 'update'])->name('client-update');
+        Route::get('/client/delete/{id}', [ClientController::class, 'delete'])->name('client-delete');
+        Route::get('/client/inactive/{id}', [ClientController::class, 'inactive'])->name('client-inactive');
+        Route::get('/client/active/{id}', [ClientController::class, 'active'])->name('client-active');
 
     });
 
