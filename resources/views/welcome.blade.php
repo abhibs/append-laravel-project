@@ -139,79 +139,20 @@
         <div class="container">
 
             <div class="row gy-4">
-
-                <div class="col-lg-6 " data-aos="fade-up" data-aos-delay="100">
-                    <div class="service-item d-flex">
-                        <div class="icon flex-shrink-0"><i class="bi bi-briefcase"></i></div>
-                        <div>
-                            <h4 class="title"><a href="services-details.html" class="stretched-link">Lorem
-                                    Ipsum</a></h4>
-                            <p class="description">Voluptatum deleniti atque corrupti quos dolores et quas
-                                molestias excepturi sint occaecati cupiditate non provident</p>
+                @foreach ($servicedatas as $item)
+                    <div class="col-lg-6 " data-aos="fade-up" data-aos-delay="100">
+                        <div class="service-item d-flex">
+                            <div class="icon flex-shrink-0"><i class="{{ $item->icon }}"></i></div>
+                            <div>
+                                <h4 class="title"><a href="" class="stretched-link">{{ $item->title }}</a></h4>
+                                <p class="description">{!! $item->content !!}</p>
+                            </div>
                         </div>
                     </div>
-                </div>
-                <!-- End Service Item -->
+                @endforeach
 
-                <div class="col-lg-6 " data-aos="fade-up" data-aos-delay="200">
-                    <div class="service-item d-flex">
-                        <div class="icon flex-shrink-0"><i class="bi bi-card-checklist"></i></div>
-                        <div>
-                            <h4 class="title"><a href="services-details.html" class="stretched-link">Dolor
-                                    Sitema</a></h4>
-                            <p class="description">Minim veniam, quis nostrud exercitation ullamco laboris nisi ut
-                                aliquip ex ea commodo consequat tarad limino ata</p>
-                        </div>
-                    </div>
-                </div><!-- End Service Item -->
 
-                <div class="col-lg-6 " data-aos="fade-up" data-aos-delay="300">
-                    <div class="service-item d-flex">
-                        <div class="icon flex-shrink-0"><i class="bi bi-bar-chart"></i></div>
-                        <div>
-                            <h4 class="title"><a href="services-details.html" class="stretched-link">Sed ut
-                                    perspiciatis</a></h4>
-                            <p class="description">Duis aute irure dolor in reprehenderit in voluptate velit esse
-                                cillum dolore eu fugiat nulla pariatur</p>
-                        </div>
-                    </div>
-                </div><!-- End Service Item -->
 
-                <div class="col-lg-6 " data-aos="fade-up" data-aos-delay="400">
-                    <div class="service-item d-flex">
-                        <div class="icon flex-shrink-0"><i class="bi bi-binoculars"></i></div>
-                        <div>
-                            <h4 class="title"><a href="services-details.html" class="stretched-link">Magni
-                                    Dolores</a></h4>
-                            <p class="description">Excepteur sint occaecat cupidatat non proident, sunt in culpa
-                                qui officia deserunt mollit anim id est laborum</p>
-                        </div>
-                    </div>
-                </div><!-- End Service Item -->
-
-                <div class="col-lg-6 " data-aos="fade-up" data-aos-delay="500">
-                    <div class="service-item d-flex">
-                        <div class="icon flex-shrink-0"><i class="bi bi-brightness-high"></i></div>
-                        <div>
-                            <h4 class="title"><a href="services-details.html" class="stretched-link">Nemo
-                                    Enim</a></h4>
-                            <p class="description">At vero eos et accusamus et iusto odio dignissimos ducimus qui
-                                blanditiis praesentium voluptatum deleniti atque</p>
-                        </div>
-                    </div>
-                </div><!-- End Service Item -->
-
-                <div class="col-lg-6 " data-aos="fade-up" data-aos-delay="600">
-                    <div class="service-item d-flex">
-                        <div class="icon flex-shrink-0"><i class="bi bi-calendar4-week"></i></div>
-                        <div>
-                            <h4 class="title"><a href="services-details.html" class="stretched-link">Eiusmod
-                                    Tempor</a></h4>
-                            <p class="description">Et harum quidem rerum facilis est et expedita distinctio. Nam
-                                libero tempore, cum soluta nobis est eligendi</p>
-                        </div>
-                    </div>
-                </div><!-- End Service Item -->
 
             </div>
 
@@ -241,11 +182,9 @@
                     </p>
                     <a href="#" class="btn btn-get-started">Get Started</a>
                 </div>
-                <div class="col-lg-7 order-1 order-lg-2 d-flex align-items-center" data-aos="zoom-out"
-                    data-aos-delay="100">
+                <div class="col-lg-7 order-1 order-lg-2 d-flex align-items-center" data-aos="zoom-out" data-aos-delay="100">
                     <div class="image-stack">
-                        <img src="{{ asset('user/assets/img/features-light-1.jpg') }}" alt=""
-                            class="stack-front">
+                        <img src="{{ asset('user/assets/img/features-light-1.jpg') }}" alt="" class="stack-front">
                         <img src="{{ asset('user/assets/img/features-light-2.jpg') }}" alt="" class="stack-back">
                     </div>
                 </div>

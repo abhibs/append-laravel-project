@@ -6,6 +6,7 @@ use App\Models\About;
 use App\Models\AboutUs;
 use App\Models\Client;
 use App\Models\Enquiry;
+use App\Models\Service;
 use Illuminate\Http\Request;
 use Illuminate\Support\Carbon;
 
@@ -16,7 +17,9 @@ class HomeController extends Controller
         $clients = Client::where('status', 1)->take(6)->latest()->get();
         $about = About::find(1);
         $aboutusdatas = AboutUs::where('status', 1)->latest()->take(4)->get();
-        return view('welcome', compact('clients', 'about', 'aboutusdatas'));
+        $servicedatas = Service::where('status', 1)->latest()->take(6)->get();
+
+        return view('welcome', compact('clients', 'about', 'aboutusdatas', 'servicedatas'));
     }
 
     public function enquiry(Request $request)
