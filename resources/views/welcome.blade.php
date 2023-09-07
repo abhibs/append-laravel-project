@@ -173,19 +173,16 @@
 
             <div class="row gy-4 align-items-center features-item">
                 <div class="col-lg-5 order-2 order-lg-1" data-aos="fade-up" data-aos-delay="200">
-                    <h3>Corporis temporibus maiores provident</h3>
+                    <h3>{{ $featuredcontent->title }}</h3>
                     <p>
-                        Ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in
-                        reprehenderit in voluptate
-                        velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-                        proident.
+                        {!! $featuredcontent->content !!}
                     </p>
                     {{-- <a href="#" class="btn btn-get-started">Get Started</a> --}}
                 </div>
                 <div class="col-lg-7 order-1 order-lg-2 d-flex align-items-center" data-aos="zoom-out" data-aos-delay="100">
                     <div class="image-stack">
-                        <img src="{{ asset('user/assets/img/features-light-1.jpg') }}" alt="" class="stack-front">
-                        <img src="{{ asset('user/assets/img/features-light-2.jpg') }}" alt="" class="stack-back">
+                        <img src="{{ asset($featuredcontent->imageone) }}" alt="" class="stack-front">
+                        <img src="{{ asset($featuredcontent->imagetwo) }}" alt="" class="stack-back">
                     </div>
                 </div>
             </div><!-- Features Item -->
