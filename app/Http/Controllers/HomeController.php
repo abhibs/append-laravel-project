@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\About;
+use App\Models\AboutUs;
 use App\Models\Client;
 use App\Models\Enquiry;
 use Illuminate\Http\Request;
@@ -12,7 +14,9 @@ class HomeController extends Controller
     public function index()
     {
         $clients = Client::where('status', 1)->take(6)->latest()->get();
-        return view('welcome', compact('clients'));
+        $about = About::find(1);
+        $aboutusdatas = AboutUs::where('status', 1)->latest()->take(4)->get();
+        return view('welcome', compact('clients', 'about', 'aboutusdatas'));
     }
 
     public function enquiry(Request $request)
