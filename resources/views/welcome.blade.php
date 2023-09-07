@@ -13,9 +13,11 @@
                         with Bootstrap</p>
                 </div>
                 <div class="col-lg-5">
-                    <form action="#" class="sign-up-form d-flex" data-aos="fade-up" data-aos-delay="300">
-                        <input type="text" class="form-control" placeholder="Enter email address">
-                        <input type="submit" class="btn btn-primary" value="Sign up">
+                    <form action="{{ route('enquery-store') }}" method="post" class="sign-up-form d-flex"
+                        data-aos="fade-up" data-aos-delay="300">
+                        @csrf
+                        <input type="text" class="form-control" placeholder="Enter email address" name="email">
+                        <input type="submit" class="btn btn-primary" value="Enquiry">
                     </form>
                 </div>
             </div>
@@ -288,7 +290,8 @@
                     <div class="image-stack">
                         <img src="{{ asset('user/assets/img/features-light-1.jpg') }}" alt=""
                             class="stack-front">
-                        <img src="{{ asset('user/assets/img/features-light-2.jpg') }}" alt="" class="stack-back">
+                        <img src="{{ asset('user/assets/img/features-light-2.jpg') }}" alt=""
+                            class="stack-back">
                     </div>
                 </div>
             </div><!-- Features Item -->
