@@ -5,6 +5,7 @@ use App\Http\Controllers\Admin\CategoryController;
 use App\Http\Controllers\Admin\FaqController;
 use App\Http\Controllers\Admin\FeatureController;
 use App\Http\Controllers\Admin\PortfolioController;
+use App\Http\Controllers\Admin\ProjectController;
 use App\Http\Controllers\Admin\ServiceController;
 use App\Http\Controllers\Admin\TeamController;
 use App\Http\Controllers\Admin\TestimonialController;
@@ -121,6 +122,16 @@ Route::group(['prefix' => 'admin'], function () {
         Route::get('portfolio/inactive/{id}', [PortfolioController::class, 'inactive'])->name('portfolio-inactive');
         Route::get('portfolio/active/{id}', [PortfolioController::class, 'active'])->name('portfolio-active');
         Route::get('portfolio/delete/{id}', [PortfolioController::class, 'delete'])->name('portfolio-delete');
+
+
+        Route::get('project/create', [ProjectController::class, 'create'])->name('project-create');
+        Route::post('project/store', [ProjectController::class, 'store'])->name('project-store');
+        Route::get('project', [ProjectController::class, 'index'])->name('project');
+        Route::get('project/edit/{id}', [ProjectController::class, 'edit'])->name('project-edit');
+        Route::post('project/update', [ProjectController::class, 'update'])->name('project-update');
+        Route::get('project/inactive/{id}', [ProjectController::class, 'inactive'])->name('project-inactive');
+        Route::get('project/active/{id}', [ProjectController::class, 'active'])->name('project-active');
+        Route::get('project/delete/{id}', [ProjectController::class, 'delete'])->name('project-delete');
 
     });
 

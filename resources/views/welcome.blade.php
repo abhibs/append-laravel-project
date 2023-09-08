@@ -8,9 +8,8 @@
         <div class="container">
             <div class="row">
                 <div class="col-lg-10">
-                    <h2 data-aos="fade-up" data-aos-delay="100">Welcome to Our Website</h2>
-                    <p data-aos="fade-up" data-aos-delay="200">We are team of talented designers making websites
-                        with Bootstrap</p>
+                    <h2 data-aos="fade-up" data-aos-delay="100">Abhiram B S</h2>
+                    <p data-aos="fade-up" data-aos-delay="200">Javalli Tudoor Thirthahalli Shimoga Karnataka 577226</p>
                 </div>
                 <div class="col-lg-5">
                     <form action="{{ route('enquery-store') }}" method="post" class="sign-up-form d-flex"
@@ -149,7 +148,7 @@
     @php
         $portfoliodatas = App\Models\Portfolio::where('status', 1)->get();
         $categories = App\Models\Category::orderBy('name', 'ASC')->get();
-
+        
     @endphp
     <!-- Portfolio Section - Home Page -->
     <section id="portfolio" class="portfolio">
@@ -458,95 +457,47 @@
 
         <!--  Section Title -->
         <div class="container section-title" data-aos="fade-up">
-            <h2>Recent Posts</h2>
-            <p>Necessitatibus eius consequatur ex aliquid fuga eum quidem sint consectetur velit</p>
+            <h2>Recent Project</h2>
+            {{-- <p>Necessitatibus eius consequatur ex aliquid fuga eum quidem sint consectetur velit</p> --}}
         </div><!-- End Section Title -->
 
+
+        @php
+            $admindata = \App\Models\Admin::first();
+        @endphp
         <div class="container">
 
             <div class="row gy-4">
+                @foreach ($projectdatas as $item)
+                    <div class="col-xl-4 col-md-6" data-aos="fade-up" data-aos-delay="100">
+                        <article>
 
-                <div class="col-xl-4 col-md-6" data-aos="fade-up" data-aos-delay="100">
-                    <article>
-
-                        <div class="post-img">
-                            <img src="{{ asset('user/assets/img/blog/blog-1.jpg') }}" alt="" class="img-fluid">
-                        </div>
-
-                        <p class="post-category">Politics</p>
-
-                        <h2 class="title">
-                            <a href="blog-details.html">Dolorum optio tempore voluptas dignissimos</a>
-                        </h2>
-
-                        <div class="d-flex align-items-center">
-                            <img src="{{ asset('user/assets/img/blog/blog-author.jpg') }}" alt=""
-                                class="img-fluid post-author-img flex-shrink-0">
-                            <div class="post-meta">
-                                <p class="post-author">Maria Doe</p>
-                                <p class="post-date">
-                                    <time datetime="2022-01-01">Jan 1, 2022</time>
-                                </p>
+                            <div class="post-img">
+                                <img src="{{ asset($item->image) }}" alt="" class="img-fluid">
                             </div>
-                        </div>
 
-                    </article>
-                </div><!-- End post list item -->
 
-                <div class="col-xl-4 col-md-6" data-aos="fade-up" data-aos-delay="200">
-                    <article>
+                            <h2 class="title">
+                                <a href="{{ $item->url }}" target="_blank">{{ $item->name }}</a>
+                            </h2>
 
-                        <div class="post-img">
-                            <img src="{{ asset('user/assets/img/blog/blog-2.jpg') }}" alt="" class="img-fluid">
-                        </div>
-
-                        <p class="post-category">Sports</p>
-
-                        <h2 class="title">
-                            <a href="blog-details.html">Nisi magni odit consequatur autem nulla dolorem</a>
-                        </h2>
-
-                        <div class="d-flex align-items-center">
-                            <img src="{{ asset('user/assets/img/blog/blog-author-2.jpg') }}" alt=""
-                                class="img-fluid post-author-img flex-shrink-0">
-                            <div class="post-meta">
-                                <p class="post-author">Allisa Mayer</p>
-                                <p class="post-date">
-                                    <time datetime="2022-01-01">Jun 5, 2022</time>
-                                </p>
+                            <div class="d-flex align-items-center">
+                                <img src="{{ !empty($admindata->image) ? url('storage/admin/' . $admindata->image) : url('no_image.jpg') }}"
+                                    alt="" class="img-fluid post-author-img flex-shrink-0">
+                                <div class="post-meta">
+                                    <p class="post-author">{{ $admindata->name }}</p>
+                                    <p class="post-date">
+                                        <time>{{ \Carbon\Carbon::parse($item->date)->format('d F Y') }}</time>
+                                    </p>
+                                </div>
                             </div>
-                        </div>
 
-                    </article>
-                </div><!-- End post list item -->
+                        </article>
+                    </div>
+                @endforeach
 
-                <div class="col-xl-4 col-md-6" data-aos="fade-up" data-aos-delay="300">
-                    <article>
 
-                        <div class="post-img">
-                            <img src="{{ asset('user/assets/img/blog/blog-3.jpg') }}" alt="" class="img-fluid">
-                        </div>
 
-                        <p class="post-category">Entertainment</p>
-
-                        <h2 class="title">
-                            <a href="blog-details.html">Possimus soluta ut id suscipit ea ut in quo quia et
-                                soluta</a>
-                        </h2>
-
-                        <div class="d-flex align-items-center">
-                            <img src="{{ asset('user/assets/img/blog/blog-author-3.jpg') }}" alt=""
-                                class="img-fluid post-author-img flex-shrink-0">
-                            <div class="post-meta">
-                                <p class="post-author">Mark Dower</p>
-                                <p class="post-date">
-                                    <time datetime="2022-01-01">Jun 22, 2022</time>
-                                </p>
-                            </div>
-                        </div>
-
-                    </article>
-                </div><!-- End post list item -->
 
             </div><!-- End recent posts list -->
 

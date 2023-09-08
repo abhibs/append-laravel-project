@@ -8,6 +8,7 @@ use App\Models\Client;
 use App\Models\Enquiry;
 use App\Models\Faq;
 use App\Models\Feature;
+use App\Models\Project;
 use App\Models\Service;
 use App\Models\Team;
 use App\Models\Testimonial;
@@ -26,8 +27,10 @@ class HomeController extends Controller
         $faqdatas = Faq::where('status', 1)->latest()->get();
         $teamdatas = Team::where('status', 1)->get();
         $testimonialdatas = Testimonial::where('status', 1)->get();
+        $projectdatas = Project::where('status', 1)->get();
 
-        return view('welcome', compact('clients', 'about', 'aboutusdatas', 'servicedatas', 'featuredcontent', 'faqdatas', 'teamdatas', 'testimonialdatas'));
+
+        return view('welcome', compact('clients', 'about', 'aboutusdatas', 'servicedatas', 'featuredcontent', 'faqdatas', 'teamdatas', 'testimonialdatas', 'projectdatas'));
     }
 
     public function enquiry(Request $request)
