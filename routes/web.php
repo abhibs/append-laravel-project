@@ -5,3 +5,4 @@ use App\Http\Controllers\HomeController;
 
 Route::get('', [HomeController::class, 'index'])->name('home');
 Route::post('enquiry', [HomeController::class, 'enquiry'])->name('enquery-store');
+Route::post('contact', [HomeController::class, 'contact'])->name('contact-store');

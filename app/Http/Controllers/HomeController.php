@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\About;
 use App\Models\AboutUs;
 use App\Models\Client;
+use App\Models\Contact;
 use App\Models\Enquiry;
 use App\Models\Faq;
 use App\Models\Feature;
@@ -35,6 +36,11 @@ class HomeController extends Controller
 
     public function enquiry(Request $request)
     {
+        $request->validate([
+            'email' => 'required',
+        ], [
+            'email.required' => 'Email is Required',
+        ]);
         Enquiry::insert([
             'email' => $request->email,
             'created_at' => Carbon::now(),
@@ -45,4 +51,33 @@ class HomeController extends Controller
         );
         return redirect()->back()->with($notification);
     }
+
+    public function contact(Request $request)
+    {
+        $request->validate([
+            'name' => 'required',
+            'email' => 'required',
+            'subject' => 'required',
+            'message' => 'required',
+        ], [
+            'name.required' => 'Name is Required',
+            'email.required' => 'Email is Required',
+            'subject.required' => 'Subject is Required',
+            'message.required' => 'Message is Required',
+        ]);
+        Contact::insert([
+            'name' => $request->name,
+            'email' => $request->email,
+            'subject' => $request->subject,
+            'message' => $request->message,
+            'created_at' => Carbon::now(),
+        ]);
+        $notification = array(
+            'message' => 'Contact Form Submitted Successfully',
+            'alert-type' => 'success'
+        );
+        return redirect()->back()->with($notification);
+    }
+
+
 }
