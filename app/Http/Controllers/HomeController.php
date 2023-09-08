@@ -10,6 +10,7 @@ use App\Models\Faq;
 use App\Models\Feature;
 use App\Models\Service;
 use App\Models\Team;
+use App\Models\Testimonial;
 use Illuminate\Http\Request;
 use Illuminate\Support\Carbon;
 
@@ -24,8 +25,9 @@ class HomeController extends Controller
         $featuredcontent = Feature::find(1);
         $faqdatas = Faq::where('status', 1)->latest()->get();
         $teamdatas = Team::where('status', 1)->get();
+        $testimonialdatas = Testimonial::where('status', 1)->get();
 
-        return view('welcome', compact('clients', 'about', 'aboutusdatas', 'servicedatas', 'featuredcontent', 'faqdatas', 'teamdatas'));
+        return view('welcome', compact('clients', 'about', 'aboutusdatas', 'servicedatas', 'featuredcontent', 'faqdatas', 'teamdatas', 'testimonialdatas'));
     }
 
     public function enquiry(Request $request)
