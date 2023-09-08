@@ -6,6 +6,7 @@ use App\Models\About;
 use App\Models\AboutUs;
 use App\Models\Client;
 use App\Models\Enquiry;
+use App\Models\Faq;
 use App\Models\Feature;
 use App\Models\Service;
 use Illuminate\Http\Request;
@@ -20,8 +21,9 @@ class HomeController extends Controller
         $aboutusdatas = AboutUs::where('status', 1)->latest()->take(4)->get();
         $servicedatas = Service::where('status', 1)->latest()->take(6)->get();
         $featuredcontent = Feature::find(1);
+        $faqdatas = Faq::where('status', 1)->latest()->get();
 
-        return view('welcome', compact('clients', 'about', 'aboutusdatas', 'servicedatas', 'featuredcontent'));
+        return view('welcome', compact('clients', 'about', 'aboutusdatas', 'servicedatas', 'featuredcontent', 'faqdatas'));
     }
 
     public function enquiry(Request $request)

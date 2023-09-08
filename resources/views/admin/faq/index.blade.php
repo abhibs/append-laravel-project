@@ -44,7 +44,7 @@
                                             <td> {{ $key + 1 }} </td>
 
                                             <td>{{ $item->question }}</td>
-                                            <td>{{ $item->answer }}</td>
+                                            <td>{{ Str::limit($item->answer, 20) }}</td>
                                             <td>
                                                 @if ($item->status == 1)
                                                     <span class="badge badge-pill bg-success">Active</span>
