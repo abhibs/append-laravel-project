@@ -135,13 +135,11 @@
                 <li>
                     <a href="javascript: void(0);" class="has-arrow waves-effect">
                         <i class="ri-brush-line"></i>
-                        <span>Icons</span>
+                        <span>Portfolio Category</span>
                     </a>
                     <ul class="sub-menu" aria-expanded="false">
-                        <li><a href="icons-remix.html">Remix Icons</a></li>
-                        <li><a href="icons-materialdesign.html">Material Design</a></li>
-                        <li><a href="icons-dripicons.html">Dripicons</a></li>
-                        <li><a href="icons-fontawesome.html">Font awesome 5</a></li>
+                        <li><a href="{{ route('category-create') }}">Add Portfolio Category</a></li>
+                        <li><a href="{{ route('category') }}">All Portfolio Categories</a></li>
                     </ul>
                 </li>
 

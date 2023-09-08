@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\Admin\AboutController;
+use App\Http\Controllers\Admin\CategoryController;
 use App\Http\Controllers\Admin\FaqController;
 use App\Http\Controllers\Admin\FeatureController;
 use App\Http\Controllers\Admin\ServiceController;
@@ -101,6 +102,14 @@ Route::group(['prefix' => 'admin'], function () {
         Route::get('testimonial/delete/{id}', [TestimonialController::class, 'delete'])->name('testimonial-delete');
         Route::get('testimonial/inactive/{id}', [TestimonialController::class, 'inactive'])->name('testimonial-inactive');
         Route::get('testimonial/active/{id}', [TestimonialController::class, 'active'])->name('testimonial-active');
+
+
+        Route::get('portfolio/category/create', [CategoryController::class, 'create'])->name('category-create');
+        Route::post('portfolio/category/store', [CategoryController::class, 'store'])->name('category-store');
+        Route::get('portfolio/category', [CategoryController::class, 'index'])->name('category');
+        Route::get('portfolio/category/edit/{id}', [CategoryController::class, 'edit'])->name('category-edit');
+        Route::post('portfolio/category/update', [CategoryController::class, 'update'])->name('category-update');
+        Route::get('portfolio/category/delete/{id}', [CategoryController::class, 'delete'])->name('category-delete');
 
     });
 

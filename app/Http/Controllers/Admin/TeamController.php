@@ -60,7 +60,7 @@ class TeamController extends Controller
 
     public function index()
     {
-        $datas = Team::latest()->get();
+        $datas = Team::get();
         return view('admin.team.index', compact('datas'));
     }
 
