@@ -36,7 +36,7 @@
                 <li>
                     <a href="javascript: void(0);" class="has-arrow waves-effect">
                         <i class="ri-mail-send-line"></i>
-                        <span>User Enquiry</span>
+                        <span>User Enquiry List</span>
                     </a>
                     <ul class="sub-menu" aria-expanded="false">
                         <li><a href="{{ route('user-enquiry') }}">All User Enquiries</a></li>
@@ -161,7 +161,17 @@
                     </a>
                     <ul class="sub-menu" aria-expanded="true">
                         <li><a href="{{ route('project-create') }}">Add Project</a></li>
-                        <li><a href="{{ route('project') }}" class="has-arrow">All Project</a></li>
+                        <li><a href="{{ route('project') }}">All Project</a></li>
+                    </ul>
+                </li>
+
+                <li>
+                    <a href="javascript: void(0);" class="has-arrow waves-effect">
+                        <i class="ri-contacts-book-2-fill"></i>
+                        <span>User Contact List</span>
+                    </a>
+                    <ul class="sub-menu" aria-expanded="true">
+                        <li><a href="{{ route('user-contact') }}">All Contact List</a></li>
                     </ul>
                 </li>
 

@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\Admin\AboutController;
 use App\Http\Controllers\Admin\CategoryController;
+use App\Http\Controllers\Admin\ContactController;
 use App\Http\Controllers\Admin\FaqController;
 use App\Http\Controllers\Admin\FeatureController;
 use App\Http\Controllers\Admin\PortfolioController;
@@ -132,6 +133,10 @@ Route::group(['prefix' => 'admin'], function () {
         Route::get('project/inactive/{id}', [ProjectController::class, 'inactive'])->name('project-inactive');
         Route::get('project/active/{id}', [ProjectController::class, 'active'])->name('project-active');
         Route::get('project/delete/{id}', [ProjectController::class, 'delete'])->name('project-delete');
+
+
+        Route::get('user/contact', [ContactController::class, 'index'])->name('user-contact');
+        Route::get('user/enquiry/{id}', [ContactController::class, 'delete'])->name('user-contact-delete');
 
     });
 
