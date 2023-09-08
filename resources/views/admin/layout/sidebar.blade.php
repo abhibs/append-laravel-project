@@ -146,11 +146,11 @@
                 <li>
                     <a href="javascript: void(0);" class="has-arrow waves-effect">
                         <i class="ri-map-pin-line"></i>
-                        <span>Maps</span>
+                        <span>Portfolio</span>
                     </a>
                     <ul class="sub-menu" aria-expanded="false">
-                        <li><a href="maps-google.html">Google Maps</a></li>
-                        <li><a href="maps-vector.html">Vector Maps</a></li>
+                        <li><a href="{{ route('portfolio-create') }}">Add Portfolio</a></li>
+                        <li><a href="{{ route('portfolio') }}">All Portfolio</a></li>
                     </ul>
                 </li>
 
