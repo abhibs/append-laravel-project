@@ -101,17 +101,12 @@
                     <a href="javascript: void(0);" class="waves-effect">
                         <i class="ri-eraser-fill"></i>
                         <span class="badge rounded-pill bg-danger float-end">8</span>
-                        <span>Forms</span>
+                        <span>Faq</span>
                     </a>
                     <ul class="sub-menu" aria-expanded="false">
-                        <li><a href="form-elements.html">Form Elements</a></li>
-                        <li><a href="form-validation.html">Form Validation</a></li>
-                        <li><a href="form-advanced.html">Form Advanced Plugins</a></li>
-                        <li><a href="form-editors.html">Form Editors</a></li>
-                        <li><a href="form-uploads.html">Form File Upload</a></li>
-                        <li><a href="form-xeditable.html">Form X-editable</a></li>
-                        <li><a href="form-wizard.html">Form Wizard</a></li>
-                        <li><a href="form-mask.html">Form Mask</a></li>
+                        <li><a href="{{ route('faq-create') }}">Add Faq</a></li>
+                        <li><a href="{{ route('faq') }}">All Faq</a></li>
+
                     </ul>
                 </li>
 

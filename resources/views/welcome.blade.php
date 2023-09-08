@@ -187,7 +187,7 @@
                 </div>
             </div><!-- Features Item -->
 
-            <div class="row gy-4 align-items-stretch justify-content-between features-item ">
+            {{-- <div class="row gy-4 align-items-stretch justify-content-between features-item ">
                 <div class="col-lg-6 d-flex align-items-center features-img-bg" data-aos="zoom-out">
                     <img src="{{ asset('user/assets/img/features-light-3.jpg') }}" class="img-fluid" alt="">
                 </div>
@@ -205,7 +205,7 @@
                     </ul>
                     <a href="#" class="btn btn-get-started align-self-start">Get Started</a>
                 </div>
-            </div><!-- Features Item -->
+            </div><!-- Features Item --> --}}
 
         </div>
 
@@ -453,10 +453,10 @@
                 <div class="col-lg-4" data-aos="fade-up" data-aos-delay="100">
                     <div class="content px-xl-5">
                         <h3><span>Frequently Asked </span><strong>Questions</strong></h3>
-                        <p>
+                        {{-- <p>
                             Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
                             incididunt ut labore et dolore magna aliqua. Duis aute irure dolor in reprehenderit
-                        </p>
+                        </p> --}}
                     </div>
                 </div>
 
