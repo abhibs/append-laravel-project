@@ -80,52 +80,7 @@
 
     </section><!-- End About Section -->
 
-    <!-- Stats Section - Home Page -->
-    {{-- <section id="stats" class="stats">
 
-        <img src="{{ asset('user/assets/img/stats-bg.jpg') }}" alt="" data-aos="fade-in">
-
-        <div class="container position-relative" data-aos="fade-up" data-aos-delay="100">
-
-            <div class="row gy-4">
-
-                <div class="col-lg-3 col-md-6">
-                    <div class="stats-item text-center w-100 h-100">
-                        <span data-purecounter-start="0" data-purecounter-end="232" data-purecounter-duration="1"
-                            class="purecounter"></span>
-                        <p>Clients</p>
-                    </div>
-                </div><!-- End Stats Item -->
-
-                <div class="col-lg-3 col-md-6">
-                    <div class="stats-item text-center w-100 h-100">
-                        <span data-purecounter-start="0" data-purecounter-end="521" data-purecounter-duration="1"
-                            class="purecounter"></span>
-                        <p>Projects</p>
-                    </div>
-                </div><!-- End Stats Item -->
-
-                <div class="col-lg-3 col-md-6">
-                    <div class="stats-item text-center w-100 h-100">
-                        <span data-purecounter-start="0" data-purecounter-end="1453" data-purecounter-duration="1"
-                            class="purecounter"></span>
-                        <p>Hours Of Support</p>
-                    </div>
-                </div><!-- End Stats Item -->
-
-                <div class="col-lg-3 col-md-6">
-                    <div class="stats-item text-center w-100 h-100">
-                        <span data-purecounter-start="0" data-purecounter-end="32" data-purecounter-duration="1"
-                            class="purecounter"></span>
-                        <p>Workers</p>
-                    </div>
-                </div><!-- End Stats Item -->
-
-            </div>
-
-        </div>
-
-    </section><!-- End Stats Section --> --}}
 
     <!-- Services Section - Home Page -->
     <section id="services" class="services">
@@ -133,7 +88,6 @@
         <!--  Section Title -->
         <div class="container section-title" data-aos="fade-up">
             <h2>Services</h2>
-            {{-- <p>Necessitatibus eius consequatur ex aliquid fuga eum quidem sint consectetur velit</p> --}}
         </div><!-- End Section Title -->
 
         <div class="container">
@@ -166,7 +120,6 @@
         <!--  Section Title -->
         <div class="container section-title" data-aos="fade-up">
             <h2>Features</h2>
-            {{-- <p>Necessitatibus eius consequatur ex aliquid fuga eum quidem sint consectetur velit</p> --}}
         </div><!-- End Section Title -->
 
         <div class="container">
@@ -187,25 +140,7 @@
                 </div>
             </div><!-- Features Item -->
 
-            {{-- <div class="row gy-4 align-items-stretch justify-content-between features-item ">
-                <div class="col-lg-6 d-flex align-items-center features-img-bg" data-aos="zoom-out">
-                    <img src="{{ asset('user/assets/img/features-light-3.jpg') }}" class="img-fluid" alt="">
-                </div>
-                <div class="col-lg-5 d-flex justify-content-center flex-column" data-aos="fade-up">
-                    <h3>Sunt consequatur ad ut est nulla</h3>
-                    <p>Cupiditate placeat cupiditate placeat est ipsam culpa. Delectus quia minima quod. Sunt saepe
-                        odit aut quia voluptatem hic voluptas dolor doloremque.</p>
-                    <ul>
-                        <li><i class="bi bi-check"></i> <span>Ullamco laboris nisi ut aliquip ex ea commodo
-                                consequat.</span></li>
-                        <li><i class="bi bi-check"></i><span> Duis aute irure dolor in reprehenderit in voluptate
-                                velit.</span></li>
-                        <li><i class="bi bi-check"></i> <span>Facilis ut et voluptatem aperiam. Autem soluta ad
-                                fugiat</span>.</li>
-                    </ul>
-                    <a href="#" class="btn btn-get-started align-self-start">Get Started</a>
-                </div>
-            </div><!-- Features Item --> --}}
+
 
         </div>
 
@@ -513,7 +448,7 @@
                         <div class="member-info text-center">
                             <h4>{{ $item->name }}</h4>
                             <span>{{ $item->designation }}</span>
-                            <p>{!! $item->conent !!}</p>
+                            <p>{!! $item->content !!}</p>
                         </div>
                     </div>
                 @endforeach
@@ -527,26 +462,7 @@
 
     </section><!-- End Team Section -->
 
-    <!-- Call-to-action Section - Home Page -->
-    <section id="call-to-action" class="call-to-action">
 
-        <img src="{{ asset('user/assets/img/cta-bg.jpg') }}" alt="">
-
-        <div class="container">
-            <div class="row justify-content-center" data-aos="zoom-in" data-aos-delay="100">
-                <div class="col-xl-10">
-                    <div class="text-center">
-                        <h3>Call To Action</h3>
-                        <p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat
-                            nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui
-                            officia deserunt mollit anim id est laborum.</p>
-                        <a class="cta-btn" href="#">Call To Action</a>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-    </section><!-- End Call-to-action Section -->
 
     <!-- Testimonials Section - Home Page -->
     <section id="testimonials" class="testimonials">
@@ -557,12 +473,7 @@
 
                 <div class="col-lg-5 info" data-aos="fade-up" data-aos-delay="100">
                     <h3>Testimonials</h3>
-                    <p>
-                        Ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in
-                        reprehenderit in voluptate
-                        velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-                        proident.
-                    </p>
+
                 </div>
 
                 <div class="col-lg-7" data-aos="fade-up" data-aos-delay="200">

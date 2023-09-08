@@ -5,6 +5,7 @@ use App\Http\Controllers\Admin\FaqController;
 use App\Http\Controllers\Admin\FeatureController;
 use App\Http\Controllers\Admin\ServiceController;
 use App\Http\Controllers\Admin\TeamController;
+use App\Http\Controllers\Admin\TestimonialController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Admin\AdminController;
 use App\Http\Controllers\Admin\EnquiryController;
@@ -91,6 +92,15 @@ Route::group(['prefix' => 'admin'], function () {
         Route::get('team/delete/{id}', [TeamController::class, 'delete'])->name('team-delete');
         Route::get('team/inactive/{id}', [TeamController::class, 'inactive'])->name('team-inactive');
         Route::get('team/active/{id}', [TeamController::class, 'active'])->name('team-active');
+
+        Route::get('testimonial/create', [TestimonialController::class, 'create'])->name('testimonial-create');
+        Route::post('testimonial/store', [TestimonialController::class, 'store'])->name('testimonial-store');
+        Route::get('testimonial', [TestimonialController::class, 'index'])->name('testimonial');
+        Route::get('testimonial/edit/{id}', [TestimonialController::class, 'edit'])->name('testimonial-edit');
+        Route::post('testimonial/update', [TestimonialController::class, 'update'])->name('testimonial-update');
+        Route::get('testimonial/delete/{id}', [TestimonialController::class, 'delete'])->name('testimonial-delete');
+        Route::get('testimonial/inactive/{id}', [TestimonialController::class, 'inactive'])->name('testimonial-inactive');
+        Route::get('testimonial/active/{id}', [TestimonialController::class, 'active'])->name('testimonial-active');
 
     });
 

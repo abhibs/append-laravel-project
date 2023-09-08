@@ -124,14 +124,11 @@
                 <li>
                     <a href="javascript: void(0);" class="has-arrow waves-effect">
                         <i class="ri-bar-chart-line"></i>
-                        <span>Charts</span>
+                        <span>Testimonial</span>
                     </a>
                     <ul class="sub-menu" aria-expanded="false">
-                        <li><a href="charts-apex.html">Apex Charts</a></li>
-                        <li><a href="charts-chartjs.html">Chartjs Charts</a></li>
-                        <li><a href="charts-flot.html">Flot Charts</a></li>
-                        <li><a href="charts-knob.html">Jquery Knob Charts</a></li>
-                        <li><a href="charts-sparkline.html">Sparkline Charts</a></li>
+                        <li><a href="{{ route('testimonial-create') }}">Add Testimonial</a></li>
+                        <li><a href="{{ route('testimonial') }}">All Testimonial</a></li>
                     </ul>
                 </li>
 
