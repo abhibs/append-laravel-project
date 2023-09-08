@@ -4,6 +4,7 @@ use App\Http\Controllers\Admin\AboutController;
 use App\Http\Controllers\Admin\FaqController;
 use App\Http\Controllers\Admin\FeatureController;
 use App\Http\Controllers\Admin\ServiceController;
+use App\Http\Controllers\Admin\TeamController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Admin\AdminController;
 use App\Http\Controllers\Admin\EnquiryController;
@@ -80,6 +81,16 @@ Route::group(['prefix' => 'admin'], function () {
         Route::get('faq/delete/{id}', [FaqController::class, 'delete'])->name('faq-delete');
         Route::get('faq/inactive/{id}', [FaqController::class, 'inactive'])->name('faq-inactive');
         Route::get('faq/active/{id}', [FaqController::class, 'active'])->name('faq-active');
+
+
+        Route::get('team/create', [TeamController::class, 'create'])->name('team-create');
+        Route::post('team/store', [TeamController::class, 'store'])->name('team-store');
+        Route::get('team', [TeamController::class, 'index'])->name('team');
+        Route::get('team/edit/{id}', [TeamController::class, 'edit'])->name('team-edit');
+        Route::post('team/update/{id}', [TeamController::class, 'update'])->name('team-update');
+        Route::get('team/delete/{id}', [TeamController::class, 'delete'])->name('team-delete');
+        Route::get('team/inactive/{id}', [TeamController::class, 'inactive'])->name('team-inactive');
+        Route::get('team/active/{id}', [TeamController::class, 'active'])->name('team-active');
 
     });
 

@@ -113,13 +113,11 @@
                 <li>
                     <a href="javascript: void(0);" class="has-arrow waves-effect">
                         <i class="ri-table-2"></i>
-                        <span>Tables</span>
+                        <span>Team Member</span>
                     </a>
                     <ul class="sub-menu" aria-expanded="false">
-                        <li><a href="tables-basic.html">Basic Tables</a></li>
-                        <li><a href="tables-datatable.html">Data Tables</a></li>
-                        <li><a href="tables-responsive.html">Responsive Table</a></li>
-                        <li><a href="tables-editable.html">Editable Table</a></li>
+                        <li><a href="{{ route('team-create') }}">Add Team Member</a></li>
+                        <li><a href="{{ route('team') }}">All Team Members</a></li>
                     </ul>
                 </li>
 
