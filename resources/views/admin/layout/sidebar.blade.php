@@ -104,6 +104,38 @@
 
                     </ul>
                 </li>
+                <li>
+                    <a href="javascript: void(0);" class="has-arrow waves-effect">
+                        <i class="ri-brush-line"></i>
+                        <span>Portfolio Category</span>
+                    </a>
+                    <ul class="sub-menu" aria-expanded="true">
+                        <li><a href="{{ route('category-create') }}">Add Portfolio Category</a></li>
+                        <li><a href="{{ route('category') }}">All Portfolio Categories</a></li>
+                    </ul>
+                </li>
+
+                <li>
+                    <a href="javascript: void(0);" class="has-arrow waves-effect">
+                        <i class="ri-map-pin-line"></i>
+                        <span>Portfolio</span>
+                    </a>
+                    <ul class="sub-menu" aria-expanded="true">
+                        <li><a href="{{ route('portfolio-create') }}">Add Portfolio</a></li>
+                        <li><a href="{{ route('portfolio') }}">All Portfolio</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="javascript: void(0);" class="has-arrow waves-effect">
+                        <i class="ri-red-packet-fill"></i>
+                        <span>Packages</span>
+                    </a>
+                    <ul class="sub-menu" aria-expanded="true">
+                        <li><a href="{{ route('package-create') }}">Add Package</a></li>
+                        <li><a href="{{ route('package') }}">All Packages</a></li>
+
+                    </ul>
+                </li>
 
                 <li>
                     <a href="javascript: void(0);" class="has-arrow waves-effect">
@@ -139,27 +171,7 @@
                     </ul>
                 </li>
 
-                <li>
-                    <a href="javascript: void(0);" class="has-arrow waves-effect">
-                        <i class="ri-brush-line"></i>
-                        <span>Portfolio Category</span>
-                    </a>
-                    <ul class="sub-menu" aria-expanded="true">
-                        <li><a href="{{ route('category-create') }}">Add Portfolio Category</a></li>
-                        <li><a href="{{ route('category') }}">All Portfolio Categories</a></li>
-                    </ul>
-                </li>
 
-                <li>
-                    <a href="javascript: void(0);" class="has-arrow waves-effect">
-                        <i class="ri-map-pin-line"></i>
-                        <span>Portfolio</span>
-                    </a>
-                    <ul class="sub-menu" aria-expanded="true">
-                        <li><a href="{{ route('portfolio-create') }}">Add Portfolio</a></li>
-                        <li><a href="{{ route('portfolio') }}">All Portfolio</a></li>
-                    </ul>
-                </li>
 
                 <li>
                     <a href="javascript: void(0);" class="has-arrow waves-effect">
@@ -182,17 +194,7 @@
                     </ul>
                 </li>
 
-                <li>
-                    <a href="javascript: void(0);" class="has-arrow waves-effect">
-                        <i class="ri-red-packet-fill"></i>
-                        <span>Packages</span>
-                    </a>
-                    <ul class="sub-menu" aria-expanded="true">
-                        <li><a href="{{ route('package-create') }}">Add Package</a></li>
-                        <li><a href="{{ route('package') }}">All Packages</a></li>
 
-                    </ul>
-                </li>
 
                 <li>
                     <a href="javascript: void(0);" class="has-arrow waves-effect">
