@@ -5,7 +5,10 @@ use App\Http\Controllers\Admin\CategoryController;
 use App\Http\Controllers\Admin\ContactController;
 use App\Http\Controllers\Admin\FaqController;
 use App\Http\Controllers\Admin\FeatureController;
+use App\Http\Controllers\Admin\OrderController;
+use App\Http\Controllers\Admin\PackageController;
 use App\Http\Controllers\Admin\PortfolioController;
+use App\Http\Controllers\Admin\ProfileController;
 use App\Http\Controllers\Admin\ProjectController;
 use App\Http\Controllers\Admin\ServiceController;
 use App\Http\Controllers\Admin\TeamController;
@@ -15,6 +18,7 @@ use App\Http\Controllers\Admin\AdminController;
 use App\Http\Controllers\Admin\EnquiryController;
 use App\Http\Controllers\Admin\ClientController;
 use App\Http\Controllers\Admin\AboutUsController;
+use Symfony\Component\HttpKernel\Profiler\Profile;
 
 
 Route::get('/test', function () {
@@ -137,6 +141,23 @@ Route::group(['prefix' => 'admin'], function () {
 
         Route::get('user/contact', [ContactController::class, 'index'])->name('user-contact');
         Route::get('user/enquiry/{id}', [ContactController::class, 'delete'])->name('user-contact-delete');
+
+        Route::get('package/create', [PackageController::class, 'create'])->name('package-create');
+        Route::post('package/store', [PackageController::class, 'store'])->name('package-store');
+        Route::get('package', [PackageController::class, 'index'])->name('package');
+        Route::get('package/edit/{id}', [PackageController::class, 'edit'])->name('package-edit');
+        Route::post('package/update/{id}', [PackageController::class, 'update'])->name('package-update');
+        Route::get('package/delete/{id}', [PackageController::class, 'delete'])->name('package-delete');
+        Route::get('package/inactive/{id}', [PackageController::class, 'inactive'])->name('package-inactive');
+        Route::get('package/active/{id}', [PackageController::class, 'active'])->name('package-active');
+
+
+        Route::get('order', [OrderController::class, 'index'])->name('order');
+        Route::post('order/status/update', [OrderController::class, 'updateStatusOrder'])->name('order-status-update');
+        Route::get('order/delete/{id}', [OrderController::class, 'delete'])->name('order-delete');
+
+        Route::get('user/profile', [ProfileController::class, 'index'])->name('user-profile');
+        Route::post('user/profile/update', [ProfileController::class, 'update'])->name('user-profile-update');
 
     });
 

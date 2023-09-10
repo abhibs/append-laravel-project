@@ -3,6 +3,10 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
+use App\Models\Order;
+use App\Models\Package;
+use App\Models\Portfolio;
+use App\Models\Team;
 use Illuminate\Http\Request;
 use Auth;
 use Intervention\Image\Facades\Image;
@@ -39,7 +43,13 @@ class AdminController extends Controller
 
     public function dashboard()
     {
-        return view('admin.index');
+        $ordercount = Order::count();
+        $packagecount = Package::count();
+        $teamcount = Team::count();
+        $portfoliocount = Portfolio::count();
+
+
+        return view('admin.index', compact('ordercount', 'packagecount', 'teamcount', 'portfoliocount'));
     }
 
     public function adminLogout()

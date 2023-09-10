@@ -9,6 +9,8 @@ use App\Models\Contact;
 use App\Models\Enquiry;
 use App\Models\Faq;
 use App\Models\Feature;
+use App\Models\Package;
+use App\Models\Profile;
 use App\Models\Project;
 use App\Models\Service;
 use App\Models\Team;
@@ -22,6 +24,7 @@ class HomeController extends Controller
     {
         $clients = Client::where('status', 1)->take(6)->latest()->get();
         $about = About::find(1);
+        $profiledata = Profile::find(1);
         $aboutusdatas = AboutUs::where('status', 1)->latest()->take(4)->get();
         $servicedatas = Service::where('status', 1)->latest()->take(6)->get();
         $featuredcontent = Feature::find(1);
@@ -29,9 +32,25 @@ class HomeController extends Controller
         $teamdatas = Team::where('status', 1)->get();
         $testimonialdatas = Testimonial::where('status', 1)->get();
         $projectdatas = Project::where('status', 1)->get();
+        $packagedatas = Package::where('status', 1)->take(3)->get();
 
 
-        return view('welcome', compact('clients', 'about', 'aboutusdatas', 'servicedatas', 'featuredcontent', 'faqdatas', 'teamdatas', 'testimonialdatas', 'projectdatas'));
+        return view(
+            'welcome',
+            compact(
+                'clients',
+                'profiledata',
+                'about',
+                'aboutusdatas',
+                'servicedatas',
+                'featuredcontent',
+                'faqdatas',
+                'teamdatas',
+                'testimonialdatas',
+                'projectdatas',
+                'packagedatas'
+            )
+        );
     }
 
     public function enquiry(Request $request)

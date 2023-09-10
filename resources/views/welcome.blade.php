@@ -1,15 +1,14 @@
 @extends('user.layout.app')
 @section('content')
-    <!-- Hero Section - Home Page -->
     <section id="hero" class="hero">
 
-        <img src="{{ asset('user/assets/img/hero-bg.jpg') }}" alt="" data-aos="fade-in">
+        <img src="{{ asset($profiledata->image) }}" alt="" data-aos="fade-in">
 
         <div class="container">
             <div class="row">
                 <div class="col-lg-10">
-                    <h2 data-aos="fade-up" data-aos-delay="100">Abhiram B S</h2>
-                    <p data-aos="fade-up" data-aos-delay="200">Javalli Tudoor Thirthahalli Shimoga Karnataka 577226</p>
+                    <h2 data-aos="fade-up" data-aos-delay="100">{{ $profiledata->name }}</h2>
+                    <p data-aos="fade-up" data-aos-delay="200">{!! $profiledata->content !!}</p>
                 </div>
                 <div class="col-lg-5">
                     <form action="{{ route('enquery-store') }}" method="post" class="sign-up-form d-flex"
@@ -225,70 +224,39 @@
 
         <!--  Section Title -->
         <div class="container section-title" data-aos="fade-up">
-            <h2>Pricing</h2>
-            <p>Necessitatibus eius consequatur ex aliquid fuga eum quidem sint consectetur velit</p>
+            <h2>Packages</h2>
         </div><!-- End Section Title -->
 
         <div class="container" data-aos="zoom-in" data-aos-delay="100">
 
             <div class="row g-4">
+                @foreach ($packagedatas as $item)
+                    <div class="col-lg-4">
+                        <div class="pricing-item">
+                            <h3>{{ $item->name }}</h3>
+                            <div class="icon">
+                                <i class="{{ $item->icon }}"></i>
+                            </div>
+                            <h4><sup>Rs.</sup>{{ $item->amount }}</h4>
+                            <ul>
+                                @foreach ($item->detail as $data)
+                                    <li {!! $data->condition == 0 ? '<li class="na"' : '' !!}>
+                                        {!! $data->condition == 1 ? '<i class="bi bi-check"></i>' : '<i class="bi bi-x"></i>' !!}
+                                        <span>{{ $data->description }}</span>
+                                    </li>
+                                @endforeach
 
-                <div class="col-lg-4">
-                    <div class="pricing-item">
-                        <h3>Free Plan</h3>
-                        <div class="icon">
-                            <i class="bi bi-box"></i>
+
+
+                            </ul>
+                            <div class="text-center"><a href="{{ route('package-booking', $item->id) }}"
+                                    class="buy-btn">Buy Now</a></div>
                         </div>
-                        <h4><sup>$</sup>0<span> / month</span></h4>
-                        <ul>
-                            <li><i class="bi bi-check"></i> <span>Quam adipiscing vitae proin</span></li>
-                            <li><i class="bi bi-check"></i> <span>Nec feugiat nisl pretium</span></li>
-                            <li><i class="bi bi-check"></i> <span>Nulla at volutpat diam uteera</span></li>
-                            <li class="na"><i class="bi bi-x"></i> <span>Pharetra massa massa ultricies</span>
-                            </li>
-                            <li class="na"><i class="bi bi-x"></i> <span>Massa ultricies mi quis
-                                    hendrerit</span></li>
-                        </ul>
-                        <div class="text-center"><a href="#" class="buy-btn">Buy Now</a></div>
                     </div>
-                </div><!-- End Pricing Item -->
+                @endforeach
 
-                <div class="col-lg-4">
-                    <div class="pricing-item featured">
-                        <h3>Business Plan</h3>
-                        <div class="icon">
-                            <i class="bi bi-rocket"></i>
-                        </div>
 
-                        <h4><sup>$</sup>29<span> / month</span></h4>
-                        <ul>
-                            <li><i class="bi bi-check"></i> <span>Quam adipiscing vitae proin</span></li>
-                            <li><i class="bi bi-check"></i> <span>Nec feugiat nisl pretium</span></li>
-                            <li><i class="bi bi-check"></i> <span>Nulla at volutpat diam uteera</span></li>
-                            <li><i class="bi bi-check"></i> <span>Pharetra massa massa ultricies</span></li>
-                            <li><i class="bi bi-check"></i> <span>Massa ultricies mi quis hendrerit</span></li>
-                        </ul>
-                        <div class="text-center"><a href="#" class="buy-btn">Buy Now</a></div>
-                    </div>
-                </div><!-- End Pricing Item -->
 
-                <div class="col-lg-4">
-                    <div class="pricing-item">
-                        <h3>Developer Plan</h3>
-                        <div class="icon">
-                            <i class="bi bi-send"></i>
-                        </div>
-                        <h4><sup>$</sup>49<span> / month</span></h4>
-                        <ul>
-                            <li><i class="bi bi-check"></i> <span>Quam adipiscing vitae proin</span></li>
-                            <li><i class="bi bi-check"></i> <span>Nec feugiat nisl pretium</span></li>
-                            <li><i class="bi bi-check"></i> <span>Nulla at volutpat diam uteera</span></li>
-                            <li><i class="bi bi-check"></i> <span>Pharetra massa massa ultricies</span></li>
-                            <li><i class="bi bi-check"></i> <span>Massa ultricies mi quis hendrerit</span></li>
-                        </ul>
-                        <div class="text-center"><a href="#" class="buy-btn">Buy Now</a></div>
-                    </div>
-                </div><!-- End Pricing Item -->
 
             </div>
 
@@ -467,7 +435,8 @@
 
 
         @php
-            $admindata = \App\Models\Admin::first();
+            $admindata = App\Models\Admin::first();
+            // dd($admindata);
         @endphp
         <div class="container">
 
